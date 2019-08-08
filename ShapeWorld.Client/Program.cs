@@ -1,13 +1,17 @@
 ﻿using System;
+using ShapeWorld.Domain.Collections;
 using ShapeWorld.Domain.Models;
 
 namespace ShapeWorld.Client
 {
     internal class Program
     {
-        private static void Main(string[] args)
+    public static object ShapeArray { get; private set; }
+
+    private static void Main(string[] args)
         {
-            PlayWithShapes();
+            //PlayWithShapes();
+            PlayWithCollections();
         }
 
         private static void PlayWithShapes(){
@@ -17,6 +21,13 @@ namespace ShapeWorld.Client
           
           Console.WriteLine(someShape.Volume());
           Console.WriteLine(someSquare.NumberOfEdges);
+        }
+
+        private static void PlayWithCollections(){
+          ShapeArray sa = new ShapeArray();
+          sa.DimensionalArray();
+          sa.MyList();
+          sa.MyDictionary();
         }
     }
 }

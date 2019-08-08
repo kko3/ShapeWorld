@@ -64,7 +64,23 @@ namespace ShapeWorld.Domain.Collections
           System.Console.WriteLine(shaped2.FirstOrDefault(e => e.NumberOfEdges == 4));
 
           //Write
-          shaped2[100] = new Rectangle();
+          try{
+            shaped2[100] = new Rectangle();
+          }
+          catch(ArgumentOutOfRangeException){
+            throw;
+          }
+          catch(OverflowException){
+            shaped2.Add(new Rectangle());
+          }
+          catch(Exception){
+            throw ;
+          }
+          finally
+          {
+            System.Console.WriteLine("it is final.");
+          }
+
           shaped2.Add(new Triangle());
           shaped2.AddRange(shaped2);
 
@@ -85,7 +101,13 @@ namespace ShapeWorld.Domain.Collections
 
           //Write
           shaped2["square"] = new List<Shape>();
-          shaped2.Add("square",new List<Shape>());
+          try{
+            shaped2.Add("square",new List<Shape>());
+          }
+          catch(Exception)
+          {
+            shaped2["square"] = new List<Shape>();
+          }
         }
     }
 }

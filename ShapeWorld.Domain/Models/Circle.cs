@@ -16,7 +16,7 @@ namespace ShapeWorld.Domain.Models
           return 0;
         }
 
-        public Circle() : base(1){
+        public Circle() : base(int.MaxValue){
 
         }
     }
