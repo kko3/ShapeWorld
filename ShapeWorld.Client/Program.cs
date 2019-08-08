@@ -13,6 +13,7 @@ namespace ShapeWorld.Client
         private static void PlayWithShapes(){
           Shape someShape = new Rectangle();
           Square someSquare = new Square();
+          Shape someCube = new Cube();
           
           Console.WriteLine(someShape.Volume());
           Console.WriteLine(someSquare.NumberOfEdges);
