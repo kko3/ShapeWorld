@@ -67,12 +67,12 @@ namespace ShapeWorld.Domain.Collections
           try{
             shaped2[100] = new Rectangle();
           }
-          catch(ArgumentOutOfRangeException){
-            throw;
-          }
           catch(OverflowException){
             shaped2.Add(new Rectangle());
           }
+          catch(ArgumentOutOfRangeException ex){
+            throw ex;
+          }          
           catch(Exception){
             throw ;
           }
