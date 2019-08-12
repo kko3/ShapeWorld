@@ -11,7 +11,8 @@ namespace ShapeWorld.Client
     private static void Main(string[] args)
         {
             //PlayWithShapes();
-            PlayWithCollections();
+            //PlayWithCollections();
+            PlayWithGeneric();
         }
 
         private static void PlayWithShapes(){
@@ -28,6 +29,21 @@ namespace ShapeWorld.Client
           sa.DimensionalArray();
           sa.MyList();
           sa.MyDictionary();
+        }
+
+        private static void PlayWithGeneric()
+        {
+          var gs = new GenericShape<string>();
+
+          gs.SayHello("shape");
+          gs.SayHello(new Triangle());
+
+          var gs2 = new GenericShape<Shape>();
+
+          gs2.SayHello(new Rectangle());
+
+          var gs3 = new GenericShape<Square>();
+          gs3.SayHello(new Square());
         }
     }
 }
